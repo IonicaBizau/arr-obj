@@ -15,20 +15,37 @@ $ npm i --save arr-obj
 
 const arrObj = require("arr-obj");
 
-console.log(arrObj());
+let arr = [
+    { name: "Alice", location: { name: "Earth" } },
+    { name: "Bob", location: { name: "Mars" } }
+];
+
+console.log(arrObj(arr, "name"));
+// { Alice: { name: 'Alice', location: { name: 'Earth' } },
+//   Bob: { name: 'Bob', location: { name: 'Mars' } } }
+
+console.log(arrObj(arr, "location.name", true));
+// { Earth: { name: 'Alice', location: { name: 'Earth' } },
+//   Mars: { name: 'Bob', location: { name: 'Mars' } } }
+
+console.log(arrObj([1, 4, 9, 16], c => {
+    return Math.sqrt(c);
+}));
+// { '1': 1, '2': 4, '3': 9, '4': 16 }
 ```
 
 ## Documentation
 
-### `arrObj(a, b)`
+### `arrObj(arr, by, deep)`
 Convert an array into object by using unique fields.
 
 #### Params
-- **Number** `a`: Param descrpition.
-- **Number** `b`: Param descrpition.
+- **Array** `arr`: The input array.
+- **String|Function** `by`: The field name to use in the object keys or a function returning this value.
+- **Boolean** `deep`: Use this for accessing nested objects in the array elements.
 
 #### Return
-- **Number** Return description.
+- **Object** The result object.
 
 ## How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
