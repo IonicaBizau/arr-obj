@@ -1,6 +1,6 @@
 {
   "name": "arr-obj",
-  "description": "Convert an array into object by using unique fields.",
+  "description": "Convert arrays into objects by using unique fields.",
   "keywords": [
     "arr",
     "obj",
