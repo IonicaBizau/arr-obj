@@ -10,7 +10,11 @@
 ## :cloud: Installation
 
 ```sh
-$ npm i --save arr-obj
+# Using npm
+npm install --save arr-obj
+
+# Using yarn
+yarn add arr-obj
 ```
 
 
